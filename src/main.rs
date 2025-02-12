@@ -69,13 +69,9 @@ fn is_palindrome(n: u32) -> bool {
 }
 
 fn is_product_of_two_three_digit_numbers(n: u32) -> bool {
-    for i in 100..1000 {
-        if n % i == 0 && n / i <= 999 && n / i >= 100 {
-            println!("{} / {} = {}", n, i, n / i);
-            return true;
-        }
-    }
-    false
+    (100..1000)
+        .find(|i| n % i == 0 && n / i <= 999 && n / i >= 100)
+        .is_some()
 }
 
 fn smallest_divisible_by_all(n: u64) -> u64 {
