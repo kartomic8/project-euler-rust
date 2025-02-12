@@ -4,6 +4,8 @@ fn main() {
     println!("Solution 3:{}", largest_prime_factor(600851475143));
     println!("Solution 4:{:?}", largest_palindromic_product());
     println!("Solution 5:{}", smallest_divisible_by_all(20));
+    println!("Solution 6:{}", sum_square_difference(100));
+    {}
 }
 
 fn multiples_of_three_and_five(n: u32) -> u32 {
@@ -95,6 +97,17 @@ fn smallest_divisible_by_all(n: u64) -> u64 {
     }
 }
 
+fn sum_square_difference(n: u64) -> u64 {
+    let sum_of_squares = (n * (n + 1) * (2 * n + 1)) / 6;
+    let square_of_sum = {
+        let sum = (n * (n + 1)) / 2;
+        sum * sum
+    };
+
+    square_of_sum - sum_of_squares
+}
+
+#[cfg(test)]
 mod tests {
     use super::*;
     #[test]
