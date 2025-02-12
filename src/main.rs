@@ -1,3 +1,6 @@
+mod prime;
+use prime::nth_prime;
+
 fn main() {
     println!("Solution 1:{}", multiples_of_three_and_five(1000));
     println!("Solution 2:{}", even_fibonacci_sum(4000000));
@@ -5,6 +8,7 @@ fn main() {
     println!("Solution 4:{:?}", largest_palindromic_product());
     println!("Solution 5:{}", smallest_divisible_by_all(20));
     println!("Solution 6:{}", sum_square_difference(100));
+    println!("Solution 7:{}", nth_prime(10001));
 }
 
 fn multiples_of_three_and_five(n: u32) -> u32 {
