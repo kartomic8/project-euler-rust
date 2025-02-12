@@ -5,7 +5,6 @@ fn main() {
     println!("Solution 4:{:?}", largest_palindromic_product());
     println!("Solution 5:{}", smallest_divisible_by_all(20));
     println!("Solution 6:{}", sum_square_difference(100));
-    {}
 }
 
 fn multiples_of_three_and_five(n: u32) -> u32 {
@@ -53,12 +52,9 @@ fn largest_prime_factor(n: u64) -> u64 {
 const PALINDROME_MIN: u32 = 10000;
 const PALINDROME_MAX: u32 = 998001;
 fn largest_palindromic_product() -> Option<u32> {
-    for n in (PALINDROME_MIN..PALINDROME_MAX).rev() {
-        if is_palindrome(n) && is_product_of_two_three_digit_numbers(n) {
-            return Some(n);
-        }
-    }
-    None
+    (PALINDROME_MIN..PALINDROME_MAX)
+        .rev()
+        .find(|n| is_palindrome(*n) && is_product_of_two_three_digit_numbers(*n))
 }
 
 fn is_palindrome(n: u32) -> bool {
