@@ -3,6 +3,7 @@ fn main() {
     println!("Solution 2:{}", even_fibonacci_sum(4000000));
     println!("Solution 3:{}", largest_prime_factor(600851475143));
     println!("Solution 4:{:?}", largest_palindromic_product());
+    println!("Solution 5:{}", smallest_divisible_by_all(20));
 }
 
 fn multiples_of_three_and_five(n: u32) -> u32 {
@@ -77,6 +78,21 @@ fn is_product_of_two_three_digit_numbers(n: u32) -> bool {
         }
     }
     false
+}
+
+fn smallest_divisible_by_all(n: u64) -> u64 {
+    let mut i = n;
+    loop {
+        for j in 2..(n + 1) {
+            if i % j != 0 {
+                i += n;
+                break;
+            }
+            if j == n {
+                return i;
+            }
+        }
+    }
 }
 
 mod tests {
