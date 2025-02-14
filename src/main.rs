@@ -2,6 +2,8 @@ mod largest_product_in_a_series;
 mod prime;
 use largest_product_in_a_series::largest_product_in_a_series;
 use prime::nth_prime;
+mod special_pythagorean_triplet;
+use special_pythagorean_triplet::special_pythagorean_triplet;
 
 fn main() {
     println!("Solution 1:{}", multiples_of_three_and_five(1000));
@@ -12,6 +14,7 @@ fn main() {
     println!("Solution 6:{}", sum_square_difference(100));
     println!("Solution 7:{}", nth_prime(10001));
     println!("Solution 8:{}", largest_product_in_a_series());
+    println!("Solution 9:{}", special_pythagorean_triplet());
 }
 
 fn multiples_of_three_and_five(n: u32) -> u32 {
