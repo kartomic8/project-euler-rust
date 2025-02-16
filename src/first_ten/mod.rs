@@ -19,7 +19,10 @@ pub fn solve() {
         "Solution 9:{}",
         special_pythagorean_triplet::special_pythagorean_triplet()
     );
-    println!("Solution 10:{}", summation_of_primes::summation_of_primes());
+    println!(
+        "Solution 10:{}",
+        summation_of_primes::summation_of_primes_fast()
+    );
 }
 
 fn multiples_of_three_and_five(n: u32) -> u32 {
