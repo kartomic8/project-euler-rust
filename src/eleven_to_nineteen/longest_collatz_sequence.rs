@@ -20,19 +20,21 @@ fn longest_collatz_sequence(n: u64) -> u64 {
 
 fn generate_collatz_sequence_length(n: u64, prev: &mut HashMap<u64, u64>) -> u64 {
     if let Some(len) = prev.get(&n) {
-        *len
-    } else if n == 1 {
-        prev.insert(1, 1);
-        1
-    } else if n % 2 == 0 {
-        let len = 1 + generate_collatz_sequence_length(n / 2, prev);
-        prev.insert(n, len);
-        len
-    } else {
-        let len = 1 + generate_collatz_sequence_length(n * 3 + 1, prev);
-        prev.insert(n, len);
-        len
+        return *len;
     }
+    let length_of_rest = {
+        if n == 1 {
+            0
+        } else if n % 2 == 0 {
+            generate_collatz_sequence_length(n / 2, prev)
+        } else {
+            generate_collatz_sequence_length(n * 3 + 1, prev)
+        }
+    };
+
+    let length = 1 + length_of_rest;
+    prev.insert(n, length);
+    length
 }
 
 #[cfg(test)]
