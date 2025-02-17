@@ -22,17 +22,13 @@ fn generate_collatz_sequence_length(n: u64, prev: &mut HashMap<u64, u64>) -> u64
     if let Some(len) = prev.get(&n) {
         return *len;
     }
-    let length_of_rest = {
-        if n == 1 {
-            0
-        } else if n % 2 == 0 {
-            generate_collatz_sequence_length(n / 2, prev)
-        } else {
-            generate_collatz_sequence_length(n * 3 + 1, prev)
-        }
-    };
+    if n == 1 {
+        prev.insert(1, 1);
+        return 1;
+    }
+    let next = if n % 2 == 0 { n / 2 } else { 3 * n + 1 };
 
-    let length = 1 + length_of_rest;
+    let length = 1 + generate_collatz_sequence_length(next, prev);
     prev.insert(n, length);
     length
 }
