@@ -1,6 +1,7 @@
 mod highly_divisible_triangular_number;
 mod large_sum;
 mod largest_product_in_a_grid;
+mod lattice_path;
 mod longest_collatz_sequence;
 
 pub fn solve() {
