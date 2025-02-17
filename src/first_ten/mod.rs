@@ -84,9 +84,7 @@ fn is_palindrome(n: u32) -> bool {
 }
 
 fn is_product_of_two_three_digit_numbers(n: u32) -> bool {
-    (100..1000)
-        .find(|i| n % i == 0 && n / i <= 999 && n / i >= 100)
-        .is_some()
+    (100..1000).any(|i| n % i == 0 && n / i <= 999 && n / i >= 100)
 }
 
 fn smallest_divisible_by_all(n: u64) -> u64 {

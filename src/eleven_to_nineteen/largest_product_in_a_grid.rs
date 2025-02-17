@@ -32,7 +32,7 @@ fn parse_row(row: &str) -> Vec<i64> {
 }
 
 // Assumption: length and width are the same
-fn largest_product_in_a_grid(input: &Vec<Vec<i64>>) -> i64 {
+fn largest_product_in_a_grid(input: &[Vec<i64>]) -> i64 {
     let mut largest = 0;
     for i in 0..input.len() {
         for j in 0..input[i].len() {
@@ -69,7 +69,7 @@ fn can_across(j: i64) -> bool {
     j + 3 < 20
 }
 
-fn product_across(i: usize, j: usize, input: &Vec<Vec<i64>>) -> i64 {
+fn product_across(i: usize, j: usize, input: &[Vec<i64>]) -> i64 {
     let mut product = 1;
 
     for k in 0..4 {
@@ -82,7 +82,7 @@ fn can_down(i: i64) -> bool {
     i + 3 < 20
 }
 
-fn product_down(i: usize, j: usize, input: &Vec<Vec<i64>>) -> i64 {
+fn product_down(i: usize, j: usize, input: &[Vec<i64>]) -> i64 {
     let mut product = 1;
 
     for l in 0..4 {
@@ -95,7 +95,7 @@ fn can_down_right(i: i64, j: i64) -> bool {
     can_across(j) && can_down(i)
 }
 
-fn product_down_right(i: usize, j: usize, input: &Vec<Vec<i64>>) -> i64 {
+fn product_down_right(i: usize, j: usize, input: &[Vec<i64>]) -> i64 {
     let mut product = 1;
     for k in 0..4 {
         product *= input[i + k][j + k];
@@ -111,7 +111,7 @@ fn can_up_right(i: i64, j: i64) -> bool {
     can_up(i) && can_down(j)
 }
 
-fn product_up_right(i: usize, j: usize, input: &Vec<Vec<i64>>) -> i64 {
+fn product_up_right(i: usize, j: usize, input: &[Vec<i64>]) -> i64 {
     let mut product = 1;
     for k in 0..4 {
         product *= input[i - k][j + k];
