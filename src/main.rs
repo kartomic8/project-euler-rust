@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+mod benchmark;
 mod eleven_to_nineteen;
 mod first_ten;
 mod prime;
