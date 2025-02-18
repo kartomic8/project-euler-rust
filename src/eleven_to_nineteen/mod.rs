@@ -3,6 +3,7 @@ mod large_sum;
 mod largest_product_in_a_grid;
 mod lattice_path;
 mod longest_collatz_sequence;
+mod power_digit_sum;
 
 pub fn solve() {
     largest_product_in_a_grid::solve_for_official_input();
@@ -11,5 +12,7 @@ pub fn solve() {
         highly_divisible_triangular_number::solve()
     );
     large_sum::solve_with_default_input();
-    println!("Solution 13: {}", longest_collatz_sequence::solve())
+    println!("Solution 13: {}", longest_collatz_sequence::solve());
+    lattice_path::lattice_path(21);
+    power_digit_sum::solve();
 }
