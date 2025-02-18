@@ -1,4 +1,4 @@
-fn lattice_path(n: usize) -> u64 {
+pub fn lattice_path(n: usize) -> u64 {
     let mut grid: Vec<Vec<u64>> = Vec::new();
 
     for _i in 0..n {
