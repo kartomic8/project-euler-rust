@@ -18,19 +18,19 @@ fn longest_collatz_sequence(n: u64) -> u64 {
     largest_index
 }
 
-fn generate_collatz_sequence_length(n: u64, prev: &mut HashMap<u64, u64>) -> u64 {
-    if let Some(len) = prev.get(&n) {
+fn generate_collatz_sequence_length(n: u64, cache: &mut HashMap<u64, u64>) -> u64 {
+    if let Some(len) = cache.get(&n) {
         return *len;
     }
 
     if n == 1 {
-        prev.insert(1, 1);
+        cache.insert(1, 1);
         return 1;
     }
 
     let next = if n % 2 == 0 { n / 2 } else { 3 * n + 1 };
-    let length = 1 + generate_collatz_sequence_length(next, prev);
-    prev.insert(n, length);
+    let length = 1 + generate_collatz_sequence_length(next, cache);
+    cache.insert(n, length);
     length
 }
 
