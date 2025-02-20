@@ -1,3 +1,4 @@
+mod counting_sundays;
 mod highly_divisible_triangular_number;
 mod large_sum;
 mod largest_product_in_a_grid;
