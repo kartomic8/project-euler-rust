@@ -6,6 +6,7 @@ mod largest_product_in_a_grid;
 mod lattice_path;
 mod longest_collatz_sequence;
 mod maximum_path_sum;
+mod names_scores;
 mod number_letter_counts;
 mod power_digit_sum;
 
