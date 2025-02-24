@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 mod archive;
 mod benchmark;
+mod divisors;
 mod factorial_digit_sum;
 mod prime;
 mod scratch_pad;
