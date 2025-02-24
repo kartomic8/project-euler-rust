@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+mod archive;
 mod benchmark;
-mod eleven_to_nineteen;
-mod first_ten;
+mod factorial_digit_sum;
 mod prime;
 mod scratch_pad;
 
-fn main() {
-    first_ten::solve();
-    eleven_to_nineteen::solve();
+pub fn main() {
+    println!("To view the solution to a project Euler problem, run the unit test in the relevant module in the archive folder");
 }
