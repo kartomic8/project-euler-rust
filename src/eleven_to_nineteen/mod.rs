@@ -1,3 +1,4 @@
+mod amicable_numbers;
 mod counting_sundays;
 mod highly_divisible_triangular_number;
 mod large_sum;
